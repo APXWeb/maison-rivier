@@ -32,10 +32,28 @@
   const header = document.getElementById('site-header');
   const backToTop = document.getElementById('back-to-top');
 
+  // Scroll-driven product gallery
+  const galleryWrap = document.querySelector('.scroll-gallery');
+  const gallerySlides = document.querySelectorAll('.scroll-gallery-slide');
+  const galleryDots = document.querySelectorAll('.scroll-gallery-progress span');
+
+  function updateGallery() {
+    if (!galleryWrap) return;
+    const rect = galleryWrap.getBoundingClientRect();
+    const total = rect.height - window.innerHeight;
+    if (total <= 0) return;
+    const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+    const count = gallerySlides.length;
+    const activeIndex = Math.min(Math.floor(progress * count), count - 1);
+    gallerySlides.forEach((slide, i) => slide.classList.toggle('active', i === activeIndex));
+    galleryDots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+  }
+
   function onScroll() {
     const scrollY = window.scrollY;
     header.classList.toggle('scrolled', scrollY > 20);
     backToTop.classList.toggle('show', scrollY > 600);
+    updateGallery();
   }
 
   let scrollScheduled = false;
@@ -69,11 +87,11 @@
   }
 
   // Product sections: color + size selection, WhatsApp order link
-  document.querySelectorAll('.produto').forEach(produto => {
+  document.querySelectorAll('.produto-card').forEach(produto => {
     const productName = produto.dataset.product;
     const priceText = produto.dataset.price;
     const swatches = produto.querySelectorAll('.swatch');
-    const sizes = produto.querySelectorAll('.size-link');
+    const sizes = produto.querySelectorAll('.size-chip');
     const orderLink = produto.querySelector('.product-order');
     const colorLabel = produto.querySelector('.color-live-label');
 
@@ -107,15 +125,4 @@
 
     updateOrderLink();
   });
-
-  // Size guide toggle (Polo only)
-  const sizeGuideToggle = document.getElementById('size-guide-toggle');
-  const sizeGuide = document.getElementById('size-guide');
-  if (sizeGuideToggle && sizeGuide) {
-    sizeGuideToggle.addEventListener('click', () => {
-      const isHidden = sizeGuide.hidden;
-      sizeGuide.hidden = !isHidden;
-      sizeGuideToggle.textContent = isHidden ? 'Ocultar tabela' : 'Tabela de medidas';
-    });
-  }
 })();

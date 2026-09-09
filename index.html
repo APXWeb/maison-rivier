@@ -24,7 +24,6 @@
     </a>
 
     <nav class="nav-links" id="nav-links">
-      <a href="#sobre">Maison</a>
       <a href="#colecao">Coleção</a>
       <a href="#acessorios">Acessórios</a>
       <a href="#contato">Contato</a>
@@ -39,13 +38,11 @@
 <main>
 
   <section class="hero" id="inicio">
-    <div class="hero-media" aria-hidden="true">
-      <img src="assets/img/hero-yacht.jpg" alt="">
-      <div class="hero-overlay"></div>
+    <div class="hero-crest-bg" aria-hidden="true">
+      <img src="assets/img/crest-square.jpg" alt="">
     </div>
-
     <div class="hero-content">
-      <span class="hero-eyebrow" data-reveal>Collection 01</span>
+      <span class="hero-eyebrow" data-reveal>Collection 01 · Essentials</span>
       <h1 class="hero-title">
         <span class="reveal-line"><span data-reveal>Maison</span></span>
         <span class="reveal-line"><span class="hero-script" data-reveal data-delay="1">Rivier</span></span>
@@ -53,10 +50,54 @@
       <span class="hero-sub" data-reveal data-delay="2">Élégance · Discrétion · Intemporel</span>
     </div>
 
-    <a href="#sobre" class="hero-scroll" data-reveal data-delay="3">
-      <span>Explorer</span>
+    <a href="#colecao" class="hero-scroll" data-reveal data-delay="3">
+      <span>Ver Coleção</span>
       <i></i>
     </a>
+  </section>
+
+  <section class="scroll-gallery">
+    <div class="scroll-gallery-sticky">
+      <div class="scroll-gallery-slide active" data-index="0">
+        <img src="assets/img/hero-yacht.jpg" alt="Polo Piquet Maison Rivier">
+        <div class="scroll-gallery-scrim"></div>
+        <div class="scroll-gallery-caption">
+          <span class="scroll-gallery-num">01</span>
+          <h2>Polo Piquet</h2>
+          <span class="scroll-gallery-price">R$ 249,90</span>
+        </div>
+      </div>
+      <div class="scroll-gallery-slide" data-index="1">
+        <img src="assets/img/moletom.jpg" alt="Moletom Maison Rivier">
+        <div class="scroll-gallery-scrim"></div>
+        <div class="scroll-gallery-caption">
+          <span class="scroll-gallery-num">02</span>
+          <h2>Moletom</h2>
+          <span class="scroll-gallery-price">R$ 399,90</span>
+        </div>
+      </div>
+      <div class="scroll-gallery-slide" data-index="2">
+        <img src="assets/img/calca.jpg" alt="Calça Maison Rivier">
+        <div class="scroll-gallery-scrim"></div>
+        <div class="scroll-gallery-caption">
+          <span class="scroll-gallery-num">03</span>
+          <h2>Calça</h2>
+          <span class="scroll-gallery-price">R$ 329,90</span>
+        </div>
+      </div>
+      <div class="scroll-gallery-slide" data-index="3">
+        <img src="assets/img/bermuda.jpg" alt="Bermuda Maison Rivier">
+        <div class="scroll-gallery-scrim"></div>
+        <div class="scroll-gallery-caption">
+          <span class="scroll-gallery-num">04</span>
+          <h2>Bermuda</h2>
+          <span class="scroll-gallery-price">R$ 279,90</span>
+        </div>
+      </div>
+      <div class="scroll-gallery-progress" aria-hidden="true">
+        <span data-dot="0"></span><span data-dot="1"></span><span data-dot="2"></span><span data-dot="3"></span>
+      </div>
+    </div>
   </section>
 
   <section class="manifesto">
@@ -65,199 +106,140 @@
     </div>
   </section>
 
-  <section class="sobre" id="sobre">
-    <div class="sobre-media" data-reveal>
-      <img src="assets/img/about-paris.jpg" alt="Modelo vestindo Polo Maison Rivier">
+  <section class="colecao" id="colecao">
+    <div class="colecao-heading" data-reveal>
+      <span class="eyebrow">Nossa coleção</span>
+      <h2>Peças <span class="text-accent">disponíveis</span></h2>
+      <p>Já em produção, feitas sob encomenda em pequenos lotes.</p>
     </div>
-    <div class="sobre-copy">
-      <div class="sobre-copy-inner" data-reveal data-delay="1">
-        <span class="eyebrow">Nossa história</span>
-        <h2>Mais que uma roupa,<br><em>uma atitude.</em></h2>
-        <p>A Maison Rivier nasce com um propósito simples: criar peças atemporais, livres de modismos, feitas para durar. Cada detalhe é pensado com atenção, do tecido ao bordado, da modelagem ao acabamento.</p>
-        <p>Nossa primeira coleção já está em produção, pensada para o dia a dia de quem valoriza qualidade sem exagero.</p>
-        <div class="sobre-marks">
-          <span>Algodão Premium</span>
-          <span>Caimento Perfeito</span>
-          <span>Bordado Exclusivo</span>
+
+    <div class="produtos-grid">
+
+      <article class="produto-card" data-reveal data-product="Polo Piquet" data-price="R$ 249,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/hero-yacht.jpg" alt="Polo Piquet Maison Rivier">
         </div>
-      </div>
+        <span class="produto-card-tag">Polos</span>
+        <h3>Polo Piquet</h3>
+        <p>Algodão piquet premium, gola estruturada, brasão bordado.</p>
+        <div class="produto-card-price">R$ 249,90</div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Cor: <em class="color-live-label">Azul Marinho</em></span>
+          <div class="swatch-row product-swatches">
+            <button type="button" class="swatch active" data-color="Azul Marinho" style="--swatch:#0B1E33" aria-label="Azul Marinho"></button>
+            <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
+            <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
+            <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
+            <button type="button" class="swatch" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
+          </div>
+        </div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Tamanho</span>
+          <div class="size-row product-sizes">
+            <button type="button" class="size-chip active" data-size="P">P</button>
+            <button type="button" class="size-chip" data-size="M">M</button>
+            <button type="button" class="size-chip" data-size="G">G</button>
+            <button type="button" class="size-chip" data-size="GG">GG</button>
+          </div>
+        </div>
+        <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
+      </article>
+
+      <article class="produto-card" data-reveal data-delay="1" data-product="Moletom" data-price="R$ 399,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/moletom.jpg" alt="Moletom Maison Rivier">
+        </div>
+        <span class="produto-card-tag">Moletons</span>
+        <h3>Moletom</h3>
+        <p>Oversized ou com zíper, capuz duplo, bordado exclusivo.</p>
+        <div class="produto-card-price">R$ 399,90</div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Cor: <em class="color-live-label">Preto</em></span>
+          <div class="swatch-row product-swatches">
+            <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
+            <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
+            <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
+            <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
+            <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
+          </div>
+        </div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Tamanho</span>
+          <div class="size-row product-sizes">
+            <button type="button" class="size-chip active" data-size="P">P</button>
+            <button type="button" class="size-chip" data-size="M">M</button>
+            <button type="button" class="size-chip" data-size="G">G</button>
+            <button type="button" class="size-chip" data-size="GG">GG</button>
+          </div>
+        </div>
+        <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
+      </article>
+
+      <article class="produto-card" data-reveal data-delay="2" data-product="Calça" data-price="R$ 329,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/calca.jpg" alt="Calça Maison Rivier">
+        </div>
+        <span class="produto-card-tag">Calças</span>
+        <h3>Calça</h3>
+        <p>Modelagem reta ou cargo, cós elástico, bordado exclusivo.</p>
+        <div class="produto-card-price">R$ 329,90</div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Cor: <em class="color-live-label">Preto</em></span>
+          <div class="swatch-row product-swatches">
+            <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
+            <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
+            <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
+            <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
+            <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
+          </div>
+        </div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Tamanho</span>
+          <div class="size-row product-sizes">
+            <button type="button" class="size-chip active" data-size="P">P</button>
+            <button type="button" class="size-chip" data-size="M">M</button>
+            <button type="button" class="size-chip" data-size="G">G</button>
+            <button type="button" class="size-chip" data-size="GG">GG</button>
+          </div>
+        </div>
+        <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
+      </article>
+
+      <article class="produto-card" data-reveal data-delay="3" data-product="Bermuda" data-price="R$ 279,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/bermuda.jpg" alt="Bermuda Maison Rivier">
+        </div>
+        <span class="produto-card-tag">Bermudas</span>
+        <h3>Bermuda</h3>
+        <p>Alfaiataria ou moletom, leve e versátil.</p>
+        <div class="produto-card-price">R$ 279,90</div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Cor: <em class="color-live-label">Preto</em></span>
+          <div class="swatch-row product-swatches">
+            <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
+            <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
+            <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
+            <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
+            <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
+          </div>
+        </div>
+        <div class="produto-card-row">
+          <span class="produto-card-label">Tamanho</span>
+          <div class="size-row product-sizes">
+            <button type="button" class="size-chip active" data-size="P">P</button>
+            <button type="button" class="size-chip" data-size="M">M</button>
+            <button type="button" class="size-chip" data-size="G">G</button>
+            <button type="button" class="size-chip" data-size="GG">GG</button>
+          </div>
+        </div>
+        <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
+      </article>
+
     </div>
-  </section>
-
-  <section class="produtos" id="colecao">
-
-    <article class="produto" id="polo" data-product="Polo Piquet" data-price="R$ 249,90">
-      <div class="produto-media" data-reveal>
-        <img src="assets/img/hero-yacht.jpg" alt="Polo Piquet Maison Rivier">
-      </div>
-      <div class="produto-copy">
-        <div class="produto-copy-inner" data-reveal data-delay="1">
-          <span class="produto-index">01 — Disponível agora</span>
-          <h3>Polo Piquet</h3>
-          <p class="produto-desc">Confeccionada em algodão piquet premium, une o clássico ao moderno. O caimento perfeito e os detalhes exclusivos da Maison Rivier fazem desta peça um essencial para qualquer ocasião.</p>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Cor — <em class="color-live-label">Azul Marinho</em></span>
-            <div class="swatch-row product-swatches">
-              <button type="button" class="swatch active" data-color="Azul Marinho" style="--swatch:#0B1E33" aria-label="Azul Marinho"></button>
-              <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
-              <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
-              <button type="button" class="swatch" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
-            </div>
-          </div>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Tamanho</span>
-            <div class="size-row product-sizes">
-              <button type="button" class="size-link active" data-size="P">P</button>
-              <button type="button" class="size-link" data-size="M">M</button>
-              <button type="button" class="size-link" data-size="G">G</button>
-              <button type="button" class="size-link" data-size="GG">GG</button>
-            </div>
-            <button type="button" class="text-link" id="size-guide-toggle">Tabela de medidas</button>
-          </div>
-
-          <div class="size-guide" id="size-guide" hidden>
-            <table>
-              <thead><tr><th>Tam.</th><th>Tórax</th><th>Comp.</th><th>Ombro</th></tr></thead>
-              <tbody>
-                <tr><td>P</td><td>52</td><td>70</td><td>44</td></tr>
-                <tr><td>M</td><td>54</td><td>72</td><td>46</td></tr>
-                <tr><td>G</td><td>56</td><td>74</td><td>48</td></tr>
-                <tr><td>GG</td><td>58</td><td>76</td><td>50</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="produto-footer">
-            <span class="produto-price">R$ 249,90</span>
-            <a class="text-link text-link-lg product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp <i>→</i></a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="produto reverse" data-product="Moletom" data-price="R$ 399,90">
-      <div class="produto-media" data-reveal>
-        <img src="assets/img/moletom.jpg" alt="Moletom Maison Rivier">
-      </div>
-      <div class="produto-copy">
-        <div class="produto-copy-inner" data-reveal data-delay="1">
-          <span class="produto-index">02</span>
-          <h3>Moletom</h3>
-          <p class="produto-desc">Oversized ou com zíper, capuz duplo e bordado exclusivo. Algodão premium com felpa macia, feito para o dia a dia sem abrir mão da sofisticação.</p>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Cor — <em class="color-live-label">Preto</em></span>
-            <div class="swatch-row product-swatches">
-              <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
-              <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
-              <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
-              <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
-              <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
-            </div>
-          </div>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Tamanho</span>
-            <div class="size-row product-sizes">
-              <button type="button" class="size-link active" data-size="P">P</button>
-              <button type="button" class="size-link" data-size="M">M</button>
-              <button type="button" class="size-link" data-size="G">G</button>
-              <button type="button" class="size-link" data-size="GG">GG</button>
-            </div>
-          </div>
-
-          <div class="produto-footer">
-            <span class="produto-price">R$ 399,90</span>
-            <a class="text-link text-link-lg product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp <i>→</i></a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="produto" data-product="Calça" data-price="R$ 329,90">
-      <div class="produto-media" data-reveal>
-        <img src="assets/img/calca.jpg" alt="Calça Maison Rivier">
-      </div>
-      <div class="produto-copy">
-        <div class="produto-copy-inner" data-reveal data-delay="1">
-          <span class="produto-index">03</span>
-          <h3>Calça</h3>
-          <p class="produto-desc">Modelagem reta ou cargo, cós elástico com cordão personalizado e bordado exclusivo. Algodão premium com elastano, para o dia a dia ao extraordinário.</p>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Cor — <em class="color-live-label">Preto</em></span>
-            <div class="swatch-row product-swatches">
-              <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
-              <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
-              <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
-              <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
-              <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
-            </div>
-          </div>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Tamanho</span>
-            <div class="size-row product-sizes">
-              <button type="button" class="size-link active" data-size="P">P</button>
-              <button type="button" class="size-link" data-size="M">M</button>
-              <button type="button" class="size-link" data-size="G">G</button>
-              <button type="button" class="size-link" data-size="GG">GG</button>
-            </div>
-          </div>
-
-          <div class="produto-footer">
-            <span class="produto-price">R$ 329,90</span>
-            <a class="text-link text-link-lg product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp <i>→</i></a>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="produto reverse" data-product="Bermuda" data-price="R$ 279,90">
-      <div class="produto-media" data-reveal>
-        <img src="assets/img/bermuda.jpg" alt="Bermuda Maison Rivier">
-      </div>
-      <div class="produto-copy">
-        <div class="produto-copy-inner" data-reveal data-delay="1">
-          <span class="produto-index">04</span>
-          <h3>Bermuda</h3>
-          <p class="produto-desc">Alfaiataria ou moletom, leve e versátil. Conforto e estilo para qualquer ocasião, do casual ao social.</p>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Cor — <em class="color-live-label">Preto</em></span>
-            <div class="swatch-row product-swatches">
-              <button type="button" class="swatch active" data-color="Preto" style="--swatch:#17171A" aria-label="Preto"></button>
-              <button type="button" class="swatch" data-color="Branco" style="--swatch:#F5F3EE" aria-label="Branco"></button>
-              <button type="button" class="swatch" data-color="Bege Areia" style="--swatch:#C9B79C" aria-label="Bege Areia"></button>
-              <button type="button" class="swatch" data-color="Cinza Mescla" style="--swatch:#9B9B9B" aria-label="Cinza Mescla"></button>
-              <button type="button" class="swatch" data-color="Verde Oliva" style="--swatch:#5C5F45" aria-label="Verde Oliva"></button>
-            </div>
-          </div>
-
-          <div class="produto-option">
-            <span class="produto-option-label">Tamanho</span>
-            <div class="size-row product-sizes">
-              <button type="button" class="size-link active" data-size="P">P</button>
-              <button type="button" class="size-link" data-size="M">M</button>
-              <button type="button" class="size-link" data-size="G">G</button>
-              <button type="button" class="size-link" data-size="GG">GG</button>
-            </div>
-          </div>
-
-          <div class="produto-footer">
-            <span class="produto-price">R$ 279,90</span>
-            <a class="text-link text-link-lg product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp <i>→</i></a>
-          </div>
-        </div>
-      </div>
-    </article>
-
   </section>
 
   <section class="acessorios" id="acessorios">
-    <div class="acessorios-heading" data-reveal>
+    <div class="colecao-heading" data-reveal>
       <span class="eyebrow">Detalhes que fazem a diferença</span>
       <h2>Acessórios</h2>
     </div>
@@ -316,13 +298,16 @@
   <img src="assets/img/crest-square.jpg" alt="Maison Rivier" class="footer-crest">
   <span class="footer-word">Maison Rivier</span>
   <nav class="footer-links">
-    <a href="#sobre">Maison</a>
     <a href="#colecao">Coleção</a>
     <a href="#acessorios">Acessórios</a>
     <a href="#contato">Contato</a>
   </nav>
   <p class="footer-legal">© 2026 Maison Rivier. Todos os direitos reservados.</p>
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/5511944815707?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Maison%20Rivier%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h0a7.94 7.94 0 0 0 7.94-7.94 7.9 7.9 0 0 0-2.39-5.64Zm-5.55 12.2a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.43-.16-.25a6.6 6.6 0 1 1 12.24-3.51 6.6 6.6 0 0 1-6.65 6.6Zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64s-.32-.1-.45.1-.5.64-.62.77-.23.15-.43.05a5.42 5.42 0 0 1-1.6-.98 5.98 5.98 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4s.2-.23.3-.35a1.4 1.4 0 0 0 .2-.33.37.37 0 0 0 0-.35c0-.1-.45-1.08-.62-1.48s-.33-.33-.45-.33-.25 0-.38 0a.73.73 0 0 0-.53.25 2.24 2.24 0 0 0-.7 1.66 3.9 3.9 0 0 0 .82 2.06 8.9 8.9 0 0 0 3.4 3.01c.47.2.84.32 1.13.42a2.7 2.7 0 0 0 1.24.08 2 2 0 0 0 1.32-.93 1.63 1.63 0 0 0 .11-.93c-.05-.08-.18-.13-.38-.23Z"/></svg>
+</a>
 
 <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
 
