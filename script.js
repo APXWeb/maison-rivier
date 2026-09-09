@@ -120,4 +120,41 @@
     sizeGuide.hidden = !isHidden;
     sizeGuideToggle.textContent = isHidden ? 'Ocultar tabela de medidas' : 'Ver tabela de medidas';
   });
+
+  // Catalog cards (Moletom, Calça, Bermuda): independent color/size state each
+  document.querySelectorAll('.catalog-card').forEach(card => {
+    const productName = card.dataset.product;
+    const swatches = card.querySelectorAll('.mini-swatch');
+    const sizes = card.querySelectorAll('.mini-size');
+    const orderLink = card.querySelector('.catalog-order');
+    const priceText = card.querySelector('.catalog-price').textContent.trim();
+
+    let cardColor = swatches[0] ? swatches[0].dataset.color : '';
+    let cardSize = sizes[0] ? sizes[0].dataset.size : '';
+
+    function updateCardOrderLink() {
+      const message = `Olá! Tenho interesse no ${productName} Maison Rivier.\nCor: ${cardColor}\nTamanho: ${cardSize}\nPreço: ${priceText}\n\nPoderiam me ajudar com disponibilidade e prazo?`;
+      orderLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    swatches.forEach(sw => {
+      sw.addEventListener('click', () => {
+        swatches.forEach(s => s.classList.remove('active'));
+        sw.classList.add('active');
+        cardColor = sw.dataset.color;
+        updateCardOrderLink();
+      });
+    });
+
+    sizes.forEach(sz => {
+      sz.addEventListener('click', () => {
+        sizes.forEach(s => s.classList.remove('active'));
+        sz.classList.add('active');
+        cardSize = sz.dataset.size;
+        updateCardOrderLink();
+      });
+    });
+
+    updateCardOrderLink();
+  });
 })();
