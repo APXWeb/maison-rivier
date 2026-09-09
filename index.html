@@ -21,7 +21,6 @@
   <div class="header-inner">
     <a href="#inicio" class="logo">
       <img src="assets/img/crest-square.jpg" alt="Maison Rivier" class="logo-crest">
-      <span class="logo-word">Maison Rivier</span>
     </a>
 
     <nav class="nav-links" id="nav-links">
@@ -30,73 +29,54 @@
       <a href="#contato">Contato</a>
     </nav>
 
-    <div class="header-actions">
-      <a class="nav-pill" href="#colecao">Ver Coleção</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
   </div>
 </header>
 
 <main>
 
-  <section class="stage" id="inicio">
-    <div class="stage-vignette" aria-hidden="true"></div>
-    <div class="stage-beam beam-1" aria-hidden="true"></div>
-    <div class="stage-beam beam-2" aria-hidden="true"></div>
-    <div class="stage-beam beam-3" aria-hidden="true"></div>
-    <div class="stage-fog" aria-hidden="true"></div>
+  <section class="hero" id="inicio">
+    <img src="assets/img/crest.jpg" alt="" class="hero-glow-logo" aria-hidden="true">
 
-    <div class="stage-products">
-      <a href="#produto-polo" class="stage-item" data-reveal>
-        <span class="stage-item-shadow" aria-hidden="true"></span>
-        <img src="assets/img/polo.png" alt="Polo Piquet">
-        <span class="stage-item-name">Polo Piquet</span>
-      </a>
-      <a href="#produto-moletom" class="stage-item stage-item-hero" data-reveal data-delay="1">
-        <span class="stage-item-shadow" aria-hidden="true"></span>
-        <img src="assets/img/moletom.png" alt="Moletom">
-        <span class="stage-item-name">Moletom</span>
-      </a>
-      <a href="#produto-calca" class="stage-item" data-reveal data-delay="2">
-        <span class="stage-item-shadow" aria-hidden="true"></span>
-        <img src="assets/img/calca.png" alt="Calça">
-        <span class="stage-item-name">Calça</span>
-      </a>
-      <a href="#produto-bermuda" class="stage-item" data-reveal data-delay="3">
-        <span class="stage-item-shadow" aria-hidden="true"></span>
-        <img src="assets/img/bermuda.png" alt="Bermuda">
-        <span class="stage-item-name">Bermuda</span>
-      </a>
-    </div>
-
-    <div class="stage-plate" data-reveal data-delay="4">
-      <span class="stage-plate-name">Maison Rivier</span>
-      <span class="stage-plate-sub">Selecione uma peça para ver</span>
+    <div class="hero-content">
+      <span class="hero-place" data-reveal><i></i>Paris</span>
+      <span class="hero-wordmark" data-reveal data-delay="1">Maison Rivier</span>
+      <span class="hero-sub" data-reveal data-delay="2">Élégance · Discrétion · Intemporel</span>
+      <p class="hero-desc" data-reveal data-delay="3">Peças atemporais, feitas sob encomenda em pequenos lotes — para o homem que não precisa gritar para ser notado.</p>
+      <a href="#colecao" class="hero-cta" data-reveal data-delay="4">Ver Coleção</a>
     </div>
 
     <div class="hero-scroll" aria-hidden="true"><i></i></div>
   </section>
 
-  <!-- POLO -->
-  <section class="spotlight" id="produto-polo" data-spotlight>
-    <div class="spotlight-sticky">
-      <div class="spotlight-glow" aria-hidden="true"></div>
-      <img src="assets/img/polo.png" class="spotlight-photo" alt="Polo Piquet Maison Rivier">
-      <div class="spotlight-captions">
-        <p class="spotlight-caption" data-caption>Algodão piquet premium, com caimento estruturado que mantém a forma o dia inteiro.</p>
-        <p class="spotlight-caption" data-caption>Brasão bordado à mão, discreto no peito — sem gritar, sem passar despercebido.</p>
-        <p class="spotlight-caption" data-caption>Uma peça atemporal, pensada para durar temporadas, não apenas uma estação.</p>
-      </div>
+  <section class="filmstrip" aria-label="Peças da coleção">
+    <div class="filmstrip-track">
+      <div class="filmstrip-item"><img src="assets/img/polo.png" alt="Polo Piquet"><span>Polo Piquet</span></div>
+      <div class="filmstrip-item"><img src="assets/img/moletom.png" alt="Moletom"><span>Moletom</span></div>
+      <div class="filmstrip-item"><img src="assets/img/calca.png" alt="Calça"><span>Calça</span></div>
+      <div class="filmstrip-item"><img src="assets/img/bermuda.png" alt="Bermuda"><span>Bermuda</span></div>
+      <div class="filmstrip-item"><img src="assets/img/polo.png" alt="Polo Piquet"><span>Polo Piquet</span></div>
+      <div class="filmstrip-item"><img src="assets/img/moletom.png" alt="Moletom"><span>Moletom</span></div>
+      <div class="filmstrip-item"><img src="assets/img/calca.png" alt="Calça"><span>Calça</span></div>
+      <div class="filmstrip-item"><img src="assets/img/bermuda.png" alt="Bermuda"><span>Bermuda</span></div>
     </div>
   </section>
 
-  <section class="plate-end">
-    <span class="plate-bg-text" aria-hidden="true">MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · </span>
-    <div class="plate-card" data-reveal>
-      <div class="plate-photo-box"><img src="assets/img/polo.png" class="plate-photo" alt="Polo Piquet Maison Rivier"></div>
-      <div class="plate-info produto-card" data-product="Polo Piquet" data-price="R$ 249,90">
+  <section class="colecao" id="colecao">
+    <div class="colecao-heading" data-reveal>
+      <span class="eyebrow">Nossa coleção</span>
+      <h2>Peças <span class="text-accent">disponíveis</span></h2>
+      <p>Já em produção, feitas sob encomenda em pequenos lotes.</p>
+    </div>
+
+    <div class="produtos-grid">
+
+      <article class="produto-card" data-reveal data-product="Polo Piquet" data-price="R$ 249,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/polo.png" alt="Polo Piquet Maison Rivier">
+        </div>
         <span class="produto-card-tag">Polos</span>
         <h3>Polo Piquet</h3>
         <p>Algodão piquet premium, gola estruturada, brasão bordado.</p>
@@ -121,28 +101,12 @@
           </div>
         </div>
         <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- MOLETOM -->
-  <section class="spotlight" id="produto-moletom" data-spotlight>
-    <div class="spotlight-sticky">
-      <div class="spotlight-glow" aria-hidden="true"></div>
-      <img src="assets/img/moletom.png" class="spotlight-photo" alt="Moletom Maison Rivier">
-      <div class="spotlight-captions">
-        <p class="spotlight-caption" data-caption>Moletom peso pesado, capuz duplo forrado, para dias de temperatura instável.</p>
-        <p class="spotlight-caption" data-caption>Bordado exclusivo Maison Rivier, aplicado com fio de alta durabilidade.</p>
-        <p class="spotlight-caption" data-caption>Modelagem oversized comedida — presença sem exagero.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="plate-end">
-    <span class="plate-bg-text" aria-hidden="true">MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · </span>
-    <div class="plate-card" data-reveal>
-      <div class="plate-photo-box"><img src="assets/img/moletom.png" class="plate-photo" alt="Moletom Maison Rivier"></div>
-      <div class="plate-info produto-card" data-product="Moletom" data-price="R$ 399,90">
+      <article class="produto-card" data-reveal data-delay="1" data-product="Moletom" data-price="R$ 399,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/moletom.png" alt="Moletom Maison Rivier">
+        </div>
         <span class="produto-card-tag">Moletons</span>
         <h3>Moletom</h3>
         <p>Oversized ou com zíper, capuz duplo, bordado exclusivo.</p>
@@ -167,28 +131,12 @@
           </div>
         </div>
         <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- CALÇA -->
-  <section class="spotlight" id="produto-calca" data-spotlight>
-    <div class="spotlight-sticky">
-      <div class="spotlight-glow" aria-hidden="true"></div>
-      <img src="assets/img/calca.png" class="spotlight-photo" alt="Calça Maison Rivier">
-      <div class="spotlight-captions">
-        <p class="spotlight-caption" data-caption>Cós elástico com cordão interno, para um ajuste que acompanha o corpo.</p>
-        <p class="spotlight-caption" data-caption>Tecido resistente ao uso diário, sem perder a leveza do caimento.</p>
-        <p class="spotlight-caption" data-caption>Corte reto atemporal, versátil do escritório ao fim de semana.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="plate-end">
-    <span class="plate-bg-text" aria-hidden="true">MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · </span>
-    <div class="plate-card" data-reveal>
-      <div class="plate-photo-box"><img src="assets/img/calca.png" class="plate-photo" alt="Calça Maison Rivier"></div>
-      <div class="plate-info produto-card" data-product="Calça" data-price="R$ 329,90">
+      <article class="produto-card" data-reveal data-delay="2" data-product="Calça" data-price="R$ 329,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/calca.png" alt="Calça Maison Rivier">
+        </div>
         <span class="produto-card-tag">Calças</span>
         <h3>Calça</h3>
         <p>Modelagem reta ou cargo, cós elástico, bordado exclusivo.</p>
@@ -213,28 +161,12 @@
           </div>
         </div>
         <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <!-- BERMUDA -->
-  <section class="spotlight" id="produto-bermuda" data-spotlight>
-    <div class="spotlight-sticky">
-      <div class="spotlight-glow" aria-hidden="true"></div>
-      <img src="assets/img/bermuda.png" class="spotlight-photo" alt="Bermuda Maison Rivier">
-      <div class="spotlight-captions">
-        <p class="spotlight-caption" data-caption>Tecido leve, ideal para dias quentes sem abrir mão da elegância discreta.</p>
-        <p class="spotlight-caption" data-caption>Bolsos reforçados, pensados para o uso real, não só a vitrine.</p>
-        <p class="spotlight-caption" data-caption>A peça coringa da coleção — combina com tudo, o ano inteiro.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="plate-end" id="colecao">
-    <span class="plate-bg-text" aria-hidden="true">MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · MAISON RIVIER · </span>
-    <div class="plate-card" data-reveal>
-      <div class="plate-photo-box"><img src="assets/img/bermuda.png" class="plate-photo" alt="Bermuda Maison Rivier"></div>
-      <div class="plate-info produto-card" data-product="Bermuda" data-price="R$ 279,90">
+      <article class="produto-card" data-reveal data-delay="3" data-product="Bermuda" data-price="R$ 279,90">
+        <div class="produto-card-photo">
+          <img src="assets/img/bermuda.png" alt="Bermuda Maison Rivier">
+        </div>
         <span class="produto-card-tag">Bermudas</span>
         <h3>Bermuda</h3>
         <p>Alfaiataria ou moletom, leve e versátil.</p>
@@ -259,7 +191,8 @@
           </div>
         </div>
         <a class="produto-card-btn product-order" href="#" target="_blank" rel="noopener">Solicitar via WhatsApp</a>
-      </div>
+      </article>
+
     </div>
   </section>
 

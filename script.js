@@ -68,67 +68,6 @@
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
-  // Cinematic product spotlight scroll (photo Ken-Burns + staggered captions)
-  function setupSpotlights() {
-    const sections = Array.from(document.querySelectorAll('[data-spotlight]'));
-    if (!sections.length || prefersReducedMotion) return;
-
-    const items = sections.map(sec => ({
-      section: sec,
-      photo: sec.querySelector('.spotlight-photo'),
-      glow: sec.querySelector('.spotlight-glow'),
-      captions: Array.from(sec.querySelectorAll('.spotlight-caption'))
-    }));
-
-    function update() {
-      const vh = window.innerHeight;
-      items.forEach(({ section, photo, glow, captions }) => {
-        const rect = section.getBoundingClientRect();
-        const total = rect.height - vh;
-        let progress = total > 0 ? (-rect.top) / total : 0;
-        progress = Math.max(0, Math.min(1, progress));
-
-        if (photo) {
-          const scale = 1 + progress * 0.14;
-          const shift = progress * -20;
-          photo.style.transform = `scale(${scale.toFixed(3)}) translateY(${shift.toFixed(1)}px)`;
-        }
-        if (glow) {
-          glow.style.opacity = (0.28 + progress * 0.32).toFixed(2);
-        }
-
-        const step = 1 / captions.length;
-        captions.forEach((cap, i) => {
-          const start = i * step;
-          const end = start + step;
-          const fadeMargin = step * 0.18;
-          let opacity;
-          if (progress <= start || progress >= end) {
-            opacity = 0;
-          } else if (progress < start + fadeMargin) {
-            opacity = (progress - start) / fadeMargin;
-          } else if (progress > end - fadeMargin) {
-            opacity = (end - progress) / fadeMargin;
-          } else {
-            opacity = 1;
-          }
-          cap.style.opacity = opacity.toFixed(2);
-          cap.style.transform = `translateY(${((1 - opacity) * 14).toFixed(1)}px)`;
-        });
-      });
-    }
-
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => { update(); ticking = false; });
-    });
-    window.addEventListener('resize', update);
-    update();
-  }
-  setupSpotlights();
-
   // Product sections: color + size selection, WhatsApp order link
   document.querySelectorAll('.produto-card').forEach(produto => {
     const productName = produto.dataset.product;
