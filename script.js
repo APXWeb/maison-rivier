@@ -28,23 +28,14 @@
     cursorGlow.style.display = 'none';
   }
 
-  // Header scroll state + active link + back-to-top
+  // Header scroll state + back-to-top
   const header = document.getElementById('site-header');
   const backToTop = document.getElementById('back-to-top');
-  const pageSections = document.querySelectorAll('main section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
   function onScroll() {
     const scrollY = window.scrollY;
     header.classList.toggle('scrolled', scrollY > 20);
     backToTop.classList.toggle('show', scrollY > 600);
-
-    let currentId = '';
-    pageSections.forEach(section => {
-      const top = section.offsetTop - 160;
-      if (scrollY >= top) currentId = section.id;
-    });
-    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${currentId}`));
   }
 
   let scrollScheduled = false;
@@ -68,72 +59,30 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const delay = entry.target.getAttribute('data-delay') || 0;
-          entry.target.style.transitionDelay = `${delay * 90}ms`;
+          entry.target.style.transitionDelay = `${delay * 110}ms`;
           entry.target.classList.add('is-visible');
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));
   }
 
-  // Product options: color + size + order link
-  const colorButtons = document.querySelectorAll('.color-swatch');
-  const colorLabel = document.getElementById('color-selected-label');
-  const sizeButtons = document.querySelectorAll('.size-chip');
-  const orderBtn = document.getElementById('product-order-btn');
+  // Product sections: color + size selection, WhatsApp order link
+  document.querySelectorAll('.produto').forEach(produto => {
+    const productName = produto.dataset.product;
+    const priceText = produto.dataset.price;
+    const swatches = produto.querySelectorAll('.swatch');
+    const sizes = produto.querySelectorAll('.size-link');
+    const orderLink = produto.querySelector('.product-order');
+    const colorLabel = produto.querySelector('.color-live-label');
 
-  let selectedColor = 'Azul Marinho';
-  let selectedSize = 'P';
+    let selectedColor = swatches[0] ? swatches[0].dataset.color : '';
+    let selectedSize = sizes[0] ? sizes[0].dataset.size : '';
 
-  function updateOrderLink() {
-    const message = `Olá! Tenho interesse na Polo Piquet Maison Rivier.\nCor: ${selectedColor}\nTamanho: ${selectedSize}\n\nPoderiam me ajudar com disponibilidade e prazo?`;
-    orderBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  }
-
-  colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      colorButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      selectedColor = btn.dataset.color;
-      colorLabel.textContent = selectedColor;
-      updateOrderLink();
-    });
-  });
-
-  sizeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sizeButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      selectedSize = btn.dataset.size;
-      updateOrderLink();
-    });
-  });
-
-  updateOrderLink();
-
-  // Size guide toggle
-  const sizeGuideToggle = document.getElementById('size-guide-toggle');
-  const sizeGuide = document.getElementById('size-guide');
-  sizeGuideToggle.addEventListener('click', () => {
-    const isHidden = sizeGuide.hidden;
-    sizeGuide.hidden = !isHidden;
-    sizeGuideToggle.textContent = isHidden ? 'Ocultar tabela de medidas' : 'Ver tabela de medidas';
-  });
-
-  // Catalog cards (Moletom, Calça, Bermuda): independent color/size state each
-  document.querySelectorAll('.catalog-card').forEach(card => {
-    const productName = card.dataset.product;
-    const swatches = card.querySelectorAll('.mini-swatch');
-    const sizes = card.querySelectorAll('.mini-size');
-    const orderLink = card.querySelector('.catalog-order');
-    const priceText = card.querySelector('.catalog-price').textContent.trim();
-
-    let cardColor = swatches[0] ? swatches[0].dataset.color : '';
-    let cardSize = sizes[0] ? sizes[0].dataset.size : '';
-
-    function updateCardOrderLink() {
-      const message = `Olá! Tenho interesse no ${productName} Maison Rivier.\nCor: ${cardColor}\nTamanho: ${cardSize}\nPreço: ${priceText}\n\nPoderiam me ajudar com disponibilidade e prazo?`;
+    function updateOrderLink() {
+      if (!orderLink) return;
+      const message = `Olá! Tenho interesse no ${productName} Maison Rivier.\nCor: ${selectedColor}\nTamanho: ${selectedSize}\nPreço: ${priceText}\n\nPoderiam me ajudar com disponibilidade e prazo?`;
       orderLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     }
 
@@ -141,8 +90,9 @@
       sw.addEventListener('click', () => {
         swatches.forEach(s => s.classList.remove('active'));
         sw.classList.add('active');
-        cardColor = sw.dataset.color;
-        updateCardOrderLink();
+        selectedColor = sw.dataset.color;
+        if (colorLabel) colorLabel.textContent = selectedColor;
+        updateOrderLink();
       });
     });
 
@@ -150,11 +100,22 @@
       sz.addEventListener('click', () => {
         sizes.forEach(s => s.classList.remove('active'));
         sz.classList.add('active');
-        cardSize = sz.dataset.size;
-        updateCardOrderLink();
+        selectedSize = sz.dataset.size;
+        updateOrderLink();
       });
     });
 
-    updateCardOrderLink();
+    updateOrderLink();
   });
+
+  // Size guide toggle (Polo only)
+  const sizeGuideToggle = document.getElementById('size-guide-toggle');
+  const sizeGuide = document.getElementById('size-guide');
+  if (sizeGuideToggle && sizeGuide) {
+    sizeGuideToggle.addEventListener('click', () => {
+      const isHidden = sizeGuide.hidden;
+      sizeGuide.hidden = !isHidden;
+      sizeGuideToggle.textContent = isHidden ? 'Ocultar tabela' : 'Tabela de medidas';
+    });
+  }
 })();
