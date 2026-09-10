@@ -264,14 +264,12 @@ p { color: var(--ink-soft); margin: 0 0 16px; font-weight: 300; }
   width: 240px;
   flex-shrink: 0;
 }
-.filmstrip-item img {
+.filmstrip-item .sketch-slot {
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: contain;
-  object-position: center;
   border-radius: 2px;
   background: var(--navy);
-  padding: 14px;
+  padding: 16px;
   box-sizing: border-box;
 }
 .filmstrip-item span {
@@ -308,8 +306,9 @@ p { color: var(--ink-soft); margin: 0 0 16px; font-weight: 300; }
   padding: 22px;
   box-sizing: border-box;
 }
-.produto-card-photo img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.6s ease; }
-.produto-card:hover .produto-card-photo img { transform: scale(1.05); }
+.produto-card-photo .sketch-slot { width: 100%; height: 100%; }
+.produto-card-photo .sketch { transition: transform 0.6s ease; }
+.produto-card:hover .produto-card-photo .sketch { transform: scale(1.05); }
 
 .produto-card-tag { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
 .produto-card p { font-size: 0.85rem; margin-bottom: 10px; }
@@ -383,7 +382,7 @@ p { color: var(--ink-soft); margin: 0 0 16px; font-weight: 300; }
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 .acessorio:hover { border-color: var(--accent); transform: translateY(-4px); }
-.acessorio img { width: 100%; aspect-ratio: 1.3/1; object-fit: contain; margin-bottom: 18px; }
+.acessorio .sketch-slot { width: 100%; aspect-ratio: 1.3/1; margin-bottom: 18px; }
 .acessorio-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); margin-bottom: 6px; }
 .acessorio-price { font-size: 0.78rem; letter-spacing: 0.03em; color: var(--ink-soft); }
 
@@ -457,6 +456,16 @@ p { color: var(--ink-soft); margin: 0 0 16px; font-weight: 300; }
 /* Reveal */
 [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
 [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+/* Product illustrations (filled, shaded flat-design renders) */
+.sketch-slot { display: block; }
+.sketch { width: 100%; height: 100%; display: block; overflow: visible; }
+.sketch .outline { stroke: rgba(255,255,255,0.22); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.sketch .shadow { fill: rgba(0,0,0,0.32); stroke: none; }
+.sketch .highlight { fill: rgba(255,255,255,0.09); stroke: none; }
+.sketch .detail { stroke: rgba(255,255,255,0.28); stroke-width: 1.2; fill: none; stroke-linecap: round; }
+.sketch .gold { fill: var(--accent); stroke: rgba(0,0,0,0.4); stroke-width: 0.8; }
+.sketch .goldline { stroke: #8a6f45; stroke-width: 1; fill: none; }
 
 /* Responsive */
 @media (max-width: 980px) {
