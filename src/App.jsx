@@ -117,7 +117,7 @@ export default function App() {
             {[...PRODUCTS, ...PRODUCTS].map((p, i) => (
               <div className="filmstrip-item" key={`${p.id}-${i}`}>
                 <div className="sketch-slot">
-                  <Sketch name={p.sketch} />
+                  <Sketch name={p.variants[0].sketch} />
                 </div>
                 <span>{p.name}</span>
               </div>

@@ -81,6 +81,71 @@ export const SKETCHES = {
       </g>
     `
   },
+  'moletom-zip': {
+    viewBox: '0 0 300 380',
+    fill: '#17171A',
+    markup: `
+      <path class="outline" style="fill:var(--current-fill,#17171A)" d="M150,15 Q195,20 195,55 L200,75 L245,85 L270,215 L245,222 L207,120 L215,340 L85,340 L93,120 L55,222 L30,215 L55,85 L100,75 L105,55 Q105,20 150,15 Z"/>
+      <path class="shadow" d="M93,120 L85,340 L102,340 L112,125 Z"/>
+      <path class="highlight" d="M118,28 Q150,20 182,28 L176,48 Q150,42 124,48 Z"/>
+      <path class="shadow" d="M55,85 L30,215 L45,218 L68,95 Z"/>
+      <path class="detail" d="M140,68 L137,108"/>
+      <path class="detail" d="M160,68 L163,108"/>
+      <circle cx="137" cy="110" r="2.6" fill="#555"/>
+      <circle cx="163" cy="110" r="2.6" fill="#555"/>
+      <path class="detail" d="M150,58 L150,335" stroke-width="1.4"/>
+      <rect x="146" y="150" width="8" height="12" rx="1.5" fill="#555" stroke="rgba(255,255,255,0.3)" stroke-width="0.6"/>
+      <path class="detail" d="M32,205 L48,201 M35,214 L51,210"/>
+      <path class="detail" d="M268,205 L252,201 M265,214 L249,210"/>
+      <path class="detail" d="M90,332 L210,332" stroke-width="1"/>
+      <g transform="translate(190,148)">
+        <path class="gold" d="M0,4 Q0,-2 6,-2 L20,-2 Q26,-2 26,4 L26,20 Q26,30 13,36 Q0,30 0,20 Z"/>
+        <path class="goldline" d="M13,2 L13,30 M4,10 L22,10"/>
+      </g>
+    `
+  },
+  'calca-cargo': {
+    viewBox: '0 0 300 380',
+    fill: '#17171A',
+    markup: `
+      <path class="outline" style="fill:var(--current-fill,#17171A)" d="M85,30 L215,30 Q225,55 228,95 L232,340 L188,340 L158,140 L142,140 L112,340 L68,340 L72,95 Q75,55 85,30 Z"/>
+      <rect class="shadow" x="85" y="30" width="130" height="14" rx="3"/>
+      <path class="detail" d="M150,32 L150,60"/>
+      <circle cx="140" cy="60" r="2.6" fill="#555"/>
+      <circle cx="160" cy="60" r="2.6" fill="#555"/>
+      <path class="highlight" d="M92,45 L145,42 L142,90 L96,95 Z"/>
+      <path class="shadow" d="M150,140 L158,140 L188,340 L170,340 Z"/>
+      <path class="shadow" d="M72,95 L68,340 L84,340 L92,120 Z"/>
+      <path class="detail" d="M88,60 L100,72"/>
+      <path class="detail" d="M212,60 L200,72"/>
+      <path class="detail" d="M230,150 L228,336" stroke-dasharray="1,5"/>
+      <rect class="detail" x="182" y="195" width="34" height="42" rx="2" fill="none"/>
+      <path class="detail" d="M182,208 L216,208"/>
+      <circle cx="199" cy="203" r="1.8" fill="#555"/>
+      <g transform="translate(108,68) scale(0.85)">
+        <path class="gold" d="M0,3 Q0,-1.5 4.5,-1.5 L15,-1.5 Q19.5,-1.5 19.5,3 L19.5,15 Q19.5,22.5 9.7,27 Q0,22.5 0,15 Z"/>
+      </g>
+    `
+  },
+  'bermuda-moletom': {
+    viewBox: '0 0 300 380',
+    fill: '#17171A',
+    markup: `
+      <path class="outline" style="fill:var(--current-fill,#17171A)" d="M85,30 L215,30 Q225,55 228,95 L235,215 L185,215 L158,120 L142,120 L115,215 L65,215 L72,95 Q75,55 85,30 Z"/>
+      <rect class="shadow" x="85" y="30" width="130" height="14" rx="3"/>
+      <path class="detail" d="M150,32 L150,58"/>
+      <circle cx="140" cy="58" r="2.6" fill="#555"/>
+      <circle cx="160" cy="58" r="2.6" fill="#555"/>
+      <path class="highlight" d="M92,45 L145,42 L142,85 L96,90 Z"/>
+      <path class="shadow" d="M150,120 L158,120 L185,215 L165,215 Z"/>
+      <path class="shadow" d="M72,95 L65,215 L82,215 L92,118 Z"/>
+      <path class="detail" d="M68,205 L82,205 M68,211 L82,211"/>
+      <path class="detail" d="M218,205 L232,205 M218,211 L232,211"/>
+      <g transform="translate(168,148) scale(0.85)">
+        <path class="gold" d="M0,3 Q0,-1.5 4.5,-1.5 L15,-1.5 Q19.5,-1.5 19.5,3 L19.5,15 Q19.5,22.5 9.7,27 Q0,22.5 0,15 Z"/>
+      </g>
+    `
+  },
   bone: {
     viewBox: '0 0 320 220',
     fill: '#17171A',

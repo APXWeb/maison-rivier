@@ -4,10 +4,12 @@ import Sketch from './Sketch.jsx'
 import { WHATSAPP_NUMBER } from '../data.js'
 
 export default function ProductCard({ product, index }) {
+  const [variant, setVariant] = useState(product.variants[0])
   const [color, setColor] = useState(product.colors[0])
   const [size, setSize] = useState(product.sizes[0])
 
-  const message = `Olá! Tenho interesse no ${product.name} Maison Rivier.\nCor: ${color.name}\nTamanho: ${size}\nPreço: ${product.price}\n\nPoderiam me ajudar com disponibilidade e prazo?`
+  const fullName = product.variants.length > 1 ? `${product.name} ${variant.name}` : product.name
+  const message = `Olá! Tenho interesse no ${fullName} Maison Rivier.\nCor: ${color.name}\nTamanho: ${size}\nPreço: ${product.price}\n\nPoderiam me ajudar com disponibilidade e prazo?`
   const orderHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
   return (
@@ -21,13 +23,32 @@ export default function ProductCard({ product, index }) {
     >
       <div className="produto-card-photo">
         <div className="sketch-slot">
-          <Sketch name={product.sketch} />
+          <Sketch name={variant.sketch} />
         </div>
       </div>
       <span className="produto-card-tag">{product.tag}</span>
       <h3>{product.name}</h3>
       <p>{product.description}</p>
       <div className="produto-card-price">{product.price}</div>
+
+      {product.variants.length > 1 && (
+        <div className="produto-card-row">
+          <span className="produto-card-label">Modelo: <em>{variant.name}</em></span>
+          <div className="variant-row">
+            {product.variants.map(v => (
+              <button
+                key={v.name}
+                type="button"
+                className={`variant-chip${v.name === variant.name ? ' active' : ''}`}
+                aria-pressed={v.name === variant.name}
+                onClick={() => setVariant(v)}
+              >
+                {v.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="produto-card-row">
         <span className="produto-card-label">Cor: <em>{color.name}</em></span>
@@ -39,6 +60,7 @@ export default function ProductCard({ product, index }) {
               className={`swatch${c.name === color.name ? ' active' : ''}`}
               style={{ '--swatch': c.hex }}
               aria-label={c.name}
+              aria-pressed={c.name === color.name}
               onClick={() => setColor(c)}
             />
           ))}
@@ -53,6 +75,7 @@ export default function ProductCard({ product, index }) {
               key={s}
               type="button"
               className={`size-chip${s === size ? ' active' : ''}`}
+              aria-pressed={s === size}
               onClick={() => setSize(s)}
             >
               {s}

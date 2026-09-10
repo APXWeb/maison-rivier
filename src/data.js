@@ -1,9 +1,16 @@
 export const WHATSAPP_NUMBER = '5511944815707'
 
+const CORE_COLORS = [
+  { name: 'Preto', hex: '#17171A' },
+  { name: 'Branco', hex: '#F5F3EE' },
+  { name: 'Bege Areia', hex: '#C9B79C' },
+  { name: 'Cinza Mescla', hex: '#9B9B9B' },
+  { name: 'Verde Oliva', hex: '#5C5F45' }
+]
+
 export const PRODUCTS = [
   {
     id: 'polo',
-    sketch: 'polo',
     tag: 'Polos',
     name: 'Polo Piquet',
     description: 'Algodão piquet premium, gola estruturada, brasão bordado.',
@@ -15,55 +22,49 @@ export const PRODUCTS = [
       { name: 'Verde Oliva', hex: '#5C5F45' },
       { name: 'Preto', hex: '#17171A' }
     ],
-    sizes: ['P', 'M', 'G', 'GG']
+    sizes: ['P', 'M', 'G', 'GG'],
+    variants: [
+      { name: 'Piquet', sketch: 'polo' }
+    ]
   },
   {
     id: 'moletom',
-    sketch: 'moletom',
     tag: 'Moletons',
     name: 'Moletom',
-    description: 'Oversized ou com zíper, capuz duplo, bordado exclusivo.',
+    description: 'Capuz duplo, cordão personalizado e bordado exclusivo. Composição em algodão premium com felpa mantida.',
     price: 'R$ 399,90',
-    colors: [
-      { name: 'Preto', hex: '#17171A' },
-      { name: 'Branco', hex: '#F5F3EE' },
-      { name: 'Bege Areia', hex: '#C9B79C' },
-      { name: 'Cinza Mescla', hex: '#9B9B9B' },
-      { name: 'Verde Oliva', hex: '#5C5F45' }
-    ],
-    sizes: ['P', 'M', 'G', 'GG']
+    colors: CORE_COLORS,
+    sizes: ['P', 'M', 'G', 'GG'],
+    variants: [
+      { name: 'Oversized', sketch: 'moletom' },
+      { name: 'Zíper', sketch: 'moletom-zip' }
+    ]
   },
   {
     id: 'calca',
-    sketch: 'calca',
     tag: 'Calças',
     name: 'Calça',
-    description: 'Modelagem reta ou cargo, cós elástico, bordado exclusivo.',
+    description: 'Cós elástico com cordão personalizado, bolsos laterais e traseiro, bordado exclusivo. Algodão premium com elastano.',
     price: 'R$ 329,90',
-    colors: [
-      { name: 'Preto', hex: '#17171A' },
-      { name: 'Branco', hex: '#F5F3EE' },
-      { name: 'Bege Areia', hex: '#C9B79C' },
-      { name: 'Cinza Mescla', hex: '#9B9B9B' },
-      { name: 'Verde Oliva', hex: '#5C5F45' }
-    ],
-    sizes: ['P', 'M', 'G', 'GG']
+    colors: CORE_COLORS,
+    sizes: ['P', 'M', 'G', 'GG'],
+    variants: [
+      { name: 'Reta', sketch: 'calca' },
+      { name: 'Cargo', sketch: 'calca-cargo' }
+    ]
   },
   {
     id: 'bermuda',
-    sketch: 'bermuda',
     tag: 'Bermudas',
     name: 'Bermuda',
-    description: 'Alfaiataria ou moletom, leve e versátil.',
+    description: 'Cós com passantes, fechamento em botão, bolsos laterais e traseiro, bordado exclusivo.',
     price: 'R$ 279,90',
-    colors: [
-      { name: 'Preto', hex: '#17171A' },
-      { name: 'Branco', hex: '#F5F3EE' },
-      { name: 'Bege Areia', hex: '#C9B79C' },
-      { name: 'Cinza Mescla', hex: '#9B9B9B' },
-      { name: 'Verde Oliva', hex: '#5C5F45' }
-    ],
-    sizes: ['P', 'M', 'G', 'GG']
+    colors: CORE_COLORS,
+    sizes: ['P', 'M', 'G', 'GG'],
+    variants: [
+      { name: 'Alfaiataria', sketch: 'bermuda' },
+      { name: 'Moletom', sketch: 'bermuda-moletom' }
+    ]
   }
 ]
 
