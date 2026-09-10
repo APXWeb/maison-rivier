@@ -22,9 +22,13 @@ export default function ProductCard({ product, index }) {
       transition={{ duration: 0.8, delay: index * 0.11, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="produto-card-photo">
-        <div className="sketch-slot">
-          <Sketch name={variant.sketch} />
-        </div>
+        {variant.photo ? (
+          <img src={variant.photo} alt={`${product.name} ${variant.name} Maison Rivier`} className="produto-card-real-photo" />
+        ) : (
+          <div className="sketch-slot">
+            <Sketch name={variant.sketch} />
+          </div>
+        )}
       </div>
       <span className="produto-card-tag">{product.tag}</span>
       <h3>{product.name}</h3>

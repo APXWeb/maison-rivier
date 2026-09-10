@@ -24,7 +24,7 @@ export const PRODUCTS = [
     ],
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
-      { name: 'Piquet', sketch: 'polo' }
+      { name: 'Piquet', sketch: 'polo', photo: 'assets/img/polo.jpg' }
     ]
   },
   {
@@ -36,7 +36,7 @@ export const PRODUCTS = [
     colors: CORE_COLORS,
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
-      { name: 'Oversized', sketch: 'moletom' },
+      { name: 'Oversized', sketch: 'moletom', photo: 'assets/img/moletom.jpg' },
       { name: 'Zíper', sketch: 'moletom-zip' }
     ]
   },
@@ -49,7 +49,7 @@ export const PRODUCTS = [
     colors: CORE_COLORS,
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
-      { name: 'Reta', sketch: 'calca' },
+      { name: 'Reta', sketch: 'calca', photo: 'assets/img/calca.jpg' },
       { name: 'Cargo', sketch: 'calca-cargo' }
     ]
   },
