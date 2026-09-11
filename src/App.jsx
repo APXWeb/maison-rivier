@@ -116,9 +116,13 @@ export default function App() {
           <div className="filmstrip-track">
             {[...PRODUCTS, ...PRODUCTS].map((p, i) => (
               <div className="filmstrip-item" key={`${p.id}-${i}`}>
-                <div className="sketch-slot">
-                  <Sketch name={p.variants[0].sketch} />
-                </div>
+                {p.variants[0].photo ? (
+                  <img src={p.variants[0].photo} alt={p.name} className="filmstrip-photo" />
+                ) : (
+                  <div className="sketch-slot">
+                    <Sketch name={p.variants[0].sketch} />
+                  </div>
+                )}
                 <span>{p.name}</span>
               </div>
             ))}
@@ -143,6 +147,16 @@ export default function App() {
           <motion.div className="colecao-heading" {...fadeUp(0)}>
             <span className="eyebrow">Detalhes que fazem a diferença</span>
             <h2>Acessórios</h2>
+          </motion.div>
+
+          <motion.div
+            className="acessorios-showcase"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, ease: EASE }}
+          >
+            <img src="assets/img/acessorios-colecao.jpg" alt="Coleção de acessórios Maison Rivier" />
           </motion.div>
 
           <div className="acessorios-grid">

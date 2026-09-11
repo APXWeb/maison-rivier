@@ -62,7 +62,7 @@ export const PRODUCTS = [
     colors: CORE_COLORS,
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
-      { name: 'Alfaiataria', sketch: 'bermuda' },
+      { name: 'Alfaiataria', sketch: 'bermuda', photo: 'assets/img/bermuda.jpg' },
       { name: 'Moletom', sketch: 'bermuda-moletom' }
     ]
   }
