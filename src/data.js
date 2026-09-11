@@ -37,7 +37,7 @@ export const PRODUCTS = [
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
       { name: 'Oversized', sketch: 'moletom', photo: 'assets/img/moletom.jpg' },
-      { name: 'Zíper', sketch: 'moletom-zip' }
+      { name: 'Zíper', sketch: 'moletom-zip', photo: 'assets/img/moletom-zip.jpg' }
     ]
   },
   {
@@ -50,7 +50,7 @@ export const PRODUCTS = [
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
       { name: 'Reta', sketch: 'calca', photo: 'assets/img/calca.jpg' },
-      { name: 'Cargo', sketch: 'calca-cargo' }
+      { name: 'Cargo', sketch: 'calca-cargo', photo: 'assets/img/calca-cargo.jpg' }
     ]
   },
   {
@@ -63,7 +63,7 @@ export const PRODUCTS = [
     sizes: ['P', 'M', 'G', 'GG'],
     variants: [
       { name: 'Alfaiataria', sketch: 'bermuda', photo: 'assets/img/bermuda.jpg' },
-      { name: 'Moletom', sketch: 'bermuda-moletom' }
+      { name: 'Moletom', sketch: 'bermuda-moletom', photo: 'assets/img/bermuda-moletom.jpg' }
     ]
   }
 ]
