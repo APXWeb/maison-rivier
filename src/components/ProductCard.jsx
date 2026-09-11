@@ -9,7 +9,7 @@ export default function ProductCard({ product, index }) {
   const [size, setSize] = useState(product.sizes[0])
 
   const fullName = product.variants.length > 1 ? `${product.name} ${variant.name}` : product.name
-  const message = `Olá! Tenho interesse no ${fullName} Maison Rivier.\nCor: ${color.name}\nTamanho: ${size}\nPreço: ${product.price}\n\nPoderiam me ajudar com disponibilidade e prazo?`
+  const message = `Olá! Tenho interesse ${product.article} ${fullName} Maison Rivier.\nCor: ${color.name}\nTamanho: ${size}\nPreço: ${product.price}\n\nPoderiam me ajudar com disponibilidade e prazo?`
   const orderHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
   return (
@@ -23,7 +23,7 @@ export default function ProductCard({ product, index }) {
     >
       <div className="produto-card-photo">
         {variant.photo ? (
-          <img src={variant.photo} alt={`${product.name} ${variant.name} Maison Rivier`} className="produto-card-real-photo" />
+          <img src={variant.photo} alt={`${fullName} Maison Rivier`} className="produto-card-real-photo" />
         ) : (
           <div className="sketch-slot">
             <Sketch name={variant.sketch} />

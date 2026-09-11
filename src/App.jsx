@@ -99,7 +99,7 @@ export default function App() {
               Maison Rivier
             </motion.span>
             <motion.span className="hero-sub" {...fadeUp(0.22)}>
-              Élégance · Discrétion · Intemporel
+              Élégance · Discrétion · Intemporalité
             </motion.span>
             <motion.p className="hero-desc" {...fadeUp(0.33)}>
               Peças atemporais, feitas sob encomenda em pequenos lotes — para o homem que não precisa gritar para ser notado.
